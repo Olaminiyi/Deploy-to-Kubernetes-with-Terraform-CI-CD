@@ -1,6 +1,4 @@
-# Deploy-to-Kubernetes-with-Terraform-CI-CD
-
-### CI/CD Pipeline deployment to kubernetes with terraform
+# CI/CD Pipeline deployment to kubernetes with terraform
 
 In this project we are going configure a CI/CD pipeline that deploys to kubernetes using jenkins. 
 Our Infrastructure will be provision by terraform on AWS. Let's explain some of the tools we are using in this project 
