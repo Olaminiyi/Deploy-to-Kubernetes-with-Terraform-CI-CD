@@ -439,7 +439,15 @@ pipeline {
 
 ![alt text](images/1.44.png)
 
+Now Lets check our nginx application deployed
+go to your web browser and put the dev-ser public-ip-address
+
+![alt text](images/1.45.png)
+
+we can see that our nginx application has been deployed successful
+
 **Remember to destroy the infrastructure**
+
 ```
 terraform destroy --auto-approve
 ```
