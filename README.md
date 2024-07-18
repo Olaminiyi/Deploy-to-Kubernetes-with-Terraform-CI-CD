@@ -306,6 +306,96 @@ Go to the dashboard
 
 ![alt text](images/1.29.png)
 
+**Change working directory to the jenkins-pipeline-deploy-to-eks**
+
+```
+jenkins-pipeline-deploy-to-eks
+```
+
+we have 2 folders inside this directory and a very important file Jenkinsfile:
+1. kubernetes: this contains nginx-deployment.yaml and nginx-service.yaml files for deploying nginx service into our cluster after its creation using kubectl
+
+**nginx-deployment.yaml**
+```
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx
+spec:
+  selector:
+    matchLabels:
+      app: nginx
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx
+        ports:
+        - containerPort: 80
+```
+
+**nginx-service.yaml**
+```
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx
+  labels:
+    app: nginx
+spec:
+  ports:
+  - name: http
+    port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: nginx
+  type: LoadBalancer
+```
+
+2. terraform folder:  contains the terraform configuration for creating kubernetes cluster on aws
+3. Jenkinsfile:  the jenkins tools installed on the Jenkins server(dev-server) will pickup to run our pipeline. This file contains the stages that CI/CD automation will go through to create our cluster and deploy the nginx application on it.
+
+```
+#!/usr/bin/env groovy
+pipeline {
+    agent any
+    environment {
+        AWS_ACCESS_KEY_ID = credentials('AWS_ACCESS_KEY_ID')
+        AWS_SECRET_ACCESS_KEY = credentials('AWS_SECRET_ACCESS_KEY')
+        AWS_DEFAULT_REGION = "us-east-1"
+    }
+    stages {
+        stage("Create an EKS Cluster") {
+            steps {
+                script {
+                    dir('terraform') {
+                        sh "terraform init"
+                        sh "terraform apply -auto-approve"
+                    }
+                }
+            }
+        }
+        stage("Deploy to EKS") {
+            steps {
+                script {
+                    dir('kubernetes') {
+                        sh "aws eks update-kubeconfig --name myapp-eks-cluster"
+                        sh "kubectl apply -f nginx-deployment.yaml"
+                        sh "kubectl apply -f nginx-service.yaml"
+                    }
+                }
+            }
+        }
+    }
+}
+```
+
+
 ![alt text](images/1.30.png)
 
 **Check the console output**
