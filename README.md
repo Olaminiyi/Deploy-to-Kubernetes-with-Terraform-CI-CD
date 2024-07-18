@@ -11,7 +11,12 @@ Our Infrastructure will be provision by terraform on AWS. Let's explain some of 
 
 [Terraform](https://developer.hashicorp.com/terraform/intro) is an Infrastucture as code (Iac) tools that enable us to write code to create and manage our infrastructure safely and efficiently. Terraform creates and manages resources on cloud platforms and other services through their application programming interfaces (APIs). Providers enable Terraform to work with virtually any platform or service with an accessible API.
 
-This project has 2 directories: 
+[!NOTE]
+> This project has 2 directories: clone them into the same folder you created for this project.
+> It is advisable to fork the two repositories to your git repository one for each of the directory.
+> Then create a folder for this project on your local machine and clone them into the folder.
+
+
 - [Jenkins-pipeline-deploy-to-eks](https://github.com/Olaminiyi/terraform-code-to-create-jenkins-server): it contains configuration for creating the eks cluster and the jenkinsfile
 - [terrafrom-code-to-create-jenkins-server](https://github.com/Olaminiyi/jenkins-pipeline-deploy-to-eks): it contains configuration files for creating the jenkins server 
 
