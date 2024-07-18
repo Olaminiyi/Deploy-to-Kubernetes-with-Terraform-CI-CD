@@ -253,6 +253,11 @@ check on the aws console for the resources created
 
 ### configure the Jenkins and connect it with github and aws
 
+connect to the Jenkins(dev-server) using the command
+```
+ssh -i <your-key.pem> ec2@<dev-server-public-ip-address>
+```
+
 confirm if you've configured aws with your AWS access key
 ```
 aws configure
