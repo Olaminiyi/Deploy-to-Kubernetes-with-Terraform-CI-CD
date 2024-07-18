@@ -282,7 +282,7 @@ sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 **Change working directory to the jenkins-pipeline-deploy-to-eks**
 
 ```
-jenkins-pipeline-deploy-to-eks
+cd jenkins-pipeline-deploy-to-eks
 ```
 
 we have 2 folders inside this directory and a very important file Jenkinsfile:
