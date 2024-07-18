@@ -279,42 +279,6 @@ sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 ![alt text](images/1.15.png)
 
 
-### Add your credentials
-
-![alt text](images/1.17.png)
-
-![alt text](images/1.18.png)
-
-![alt text](images/1.19.png)
-
-![alt text](images/1.20.png)
-
-Add your github username and password
-
-![alt text](images/1.21.png)
-
-Add your AWS ACCESS KEY ID and AWS secret access key
-
-![alt text](images/1.22.png)
-
-![alt text](images/1.23.png)
-
-![alt text](images/1.24.png)
-
-Go to the dashboard
-
-![alt text](images/1.25.png)
-
-![alt text](images/1.26.png)
-
-**click ok**
-
-![alt text](images/1.27.png)
-
-![alt text](images/1.28.png)
-
-![alt text](images/1.29.png)
-
 **Change working directory to the jenkins-pipeline-deploy-to-eks**
 
 ```
@@ -403,6 +367,47 @@ pipeline {
     }
 }
 ```
+
+Push your code to your git repository
+
+
+### Add your credentials
+
+![alt text](images/1.17.png)
+
+![alt text](images/1.18.png)
+
+![alt text](images/1.19.png)
+
+![alt text](images/1.20.png)
+
+Add your github username and password
+
+![alt text](images/1.21.png)
+
+Add your AWS ACCESS KEY ID and AWS secret access key
+
+![alt text](images/1.22.png)
+
+![alt text](images/1.23.png)
+
+![alt text](images/1.24.png)
+
+Go to the dashboard
+
+![alt text](images/1.25.png)
+
+![alt text](images/1.26.png)
+
+**click ok**
+
+![alt text](images/1.27.png)
+
+![alt text](images/1.28.png)
+
+![alt text](images/1.29.png)
+
+
 
 
 ![alt text](images/1.30.png)
