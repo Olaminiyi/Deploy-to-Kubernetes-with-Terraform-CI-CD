@@ -3,7 +3,7 @@
 ### CI/CD Pipeline deployment to kubernetes with terraform
 
 In this project we are going configure a CI/CD pipeline that deploys to kubernetes using jenkins. 
-Our Infrastructure will be provision by terraform on AWS. Let's explain some of the tools we are using in this project 
+Our Infrastructure will be provision by terraform on AWS. Let's explain some of the tools we are using in this project.
 
  [CI/CD](https://www.synopsys.com/glossary/what-is-cicd.html) stand for continuous integration and continuous delivery/continuous deployment. In very simple terms, CI is a modern software development practice in which incremental code changes are made frequently and reliably. Jenkins is a good and popular CI/CD tools that will be using in this project.
 
